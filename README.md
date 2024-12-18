@@ -1,127 +1,56 @@
 # Git Commands
 
-## Setup and Configuration
-- `git config --global user.name "Your Name"`  
-  Set the username for Git globally.
-- `git config --global user.email "you@example.com"`  
-  Set the email for Git globally.
-- `git config --list`  
-  View all Git configuration settings.
-- `git config --global color.ui auto`  
-  Enable color highlighting in the Git command-line interface.
+_A list of my commonly used Git commands_
 
-## Starting a New Repository
-- `git init`  
-  Initialize a new Git repository.
-- `git clone <repository-url>`  
-  Clone an existing repository from a URL.
+### Getting & Creating Projects
 
-## Basic Snapshotting
-- `git add <file>`  
-  Stage a file for commit.
-- `git add .`  
-  Stage all changes in the current directory for commit.
-- `git commit -m "commit message"`  
-  Commit staged changes with a message.
-- `git commit --amend`  
-  Amend the previous commit.
+| Command | Description |
+| ------- | ----------- |
+| `git init` | Initialize a local Git repository |
+| `git clone <repository-url>` | Create a local copy of a remote repository |
 
-## Branching and Merging
-- `git branch`  
-  List all branches in the repository.
-- `git branch <branch-name>`  
-  Create a new branch.
-- `git checkout <branch-name>`  
-  Switch to a specific branch.
-- `git checkout -b <branch-name>`  
-  Create and switch to a new branch.
-- `git merge <branch-name>`  
-  Merge a branch into the current branch.
-- `git branch -d <branch-name>`  
-  Delete a branch locally.
+### Basic Snapshotting
 
-## Stashing
-- `git stash`  
-  Temporarily save changes not ready to be committed.
-- `git stash pop`  
-  Reapply stashed changes and remove them from the stash.
-- `git stash apply`  
-  Reapply stashed changes without removing them from the stash.
-- `git stash list`  
-  List all stashed changes.
-- `git stash drop`  
-  Remove a specific stash.
+| Command | Description |
+| ------- | ----------- |
+| `git status` | Check the status of your working directory |
+| `git add <file>` | Add a specific file to the staging area |
+| `git add -A` | Add all new and changed files to the staging area |
+| `git commit -m "[commit message]"` | Commit changes with a message |
+| `git commit --amend` | Amend the previous commit |
+| `git rm -r <file>` | Remove a file or folder |
 
-## Remote Repositories
-- `git remote add <name> <url>`  
-  Add a remote repository.
-- `git remote -v`  
-  View remote repositories.
-- `git fetch <remote>`  
-  Fetch updates from a remote repository.
-- `git pull <remote> <branch>`  
-  Fetch and merge updates from a remote branch.
-- `git push <remote> <branch>`  
-  Push changes to a remote branch.
-- `git push -u <remote> <branch>`  
-  Push changes and set the upstream branch for future pushes.
+### Branching & Merging
 
-## Viewing History
-- `git log`  
-  Show commit history.
-- `git log --oneline`  
-  Show a compact commit history.
-- `git log --graph --oneline --all`  
-  Show a graphical representation of the commit history.
-- `git show <commit>`  
-  Show details of a specific commit.
+| Command | Description |
+| ------- | ----------- |
+| `git branch` | List branches (the asterisk denotes the current branch) |
+| `git branch -a` | List all branches (local and remote) |
+| `git branch <branch-name>` | Create a new branch |
+| `git branch -d <branch-name>` | Delete a branch |
+| `git checkout -b <branch-name>` | Create a new branch and switch to it |
+| `git checkout <branch-name>` | Switch to a specific branch |
+| `git merge <branch-name>` | Merge a branch into the current branch |
+| `git stash` | Stash changes in a dirty working directory |
+| `git stash pop` | Apply the latest stash and remove it from the stash |
 
-## Inspecting Changes
-- `git status`  
-  Show the working tree status.
-- `git diff`  
-  Show changes not staged for commit.
-- `git diff --staged`  
-  Show changes staged for commit.
+### Sharing & Updating Projects
 
-## Undoing Changes
-- `git reset <file>`  
-  Unstage a file.
-- `git reset --hard`  
-  Reset working directory and staging area to the last commit.
-- `git reset --soft HEAD~1`  
-  Undo the last commit but keep changes staged.
-- `git revert <commit>`  
-  Create a new commit to undo changes from a specific commit.
+| Command | Description |
+| ------- | ----------- |
+| `git push origin <branch-name>` | Push a branch to your remote repository |
+| `git push -u origin <branch-name>` | Push changes and set upstream branch |
+| `git pull` | Fetch and merge updates from the remote repository |
+| `git pull origin <branch-name>` | Pull changes from a specific remote branch |
+| `git remote add origin <repository-url>` | Add a remote repository |
+| `git remote -v` | View remote repository details |
 
-## Tagging
-- `git tag`  
-  List all tags.
-- `git tag <tag-name>`  
-  Create a new tag.
-- `git tag -a <tag-name> -m "message"`  
-  Create an annotated tag.
-- `git push <remote> <tag-name>`  
-  Push a specific tag to a remote repository.
+### Inspection & Comparison
 
-## Collaborating
-- `git pull`  
-  Fetch and integrate changes from a remote repository.
-- `git push`  
-  Push changes to a remote repository.
-- `git fetch`  
-  Download changes from a remote repository without merging.
-
-## Advanced Operations
-- `git rebase <branch>`  
-  Reapply commits on top of another branch.
-- `git cherry-pick <commit>`  
-  Apply changes from a specific commit.
-- `git bisect`  
-  Start a binary search to find the commit that introduced a bug.
-
-## Cleaning Up
-- `git clean -f`  
-  Remove untracked files.
-- `git clean -fd`  
-  Remove untracked files and directories.
+| Command | Description |
+| ------- | ----------- |
+| `git log` | View commit history |
+| `git log --oneline` | View a simplified commit history |
+| `git log --graph` | View a visual graph of the commit history |
+| `git diff` | Show unstaged changes in the working directory |
+| `git diff <source-branch> <target-branch>` | Compare changes between branches |
